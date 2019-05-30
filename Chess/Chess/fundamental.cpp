@@ -41,6 +41,21 @@ void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height)
 	}
 }
 
+void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height, int thickness)
+{
+	for (int j = 0; j < thickness; j++) {
+		for (int i = j; i < width - j; i++) {
+			locateBlock(block, x + i, y, z + j);
+			locateBlock(block, x + i, y, z + height - 1 + j);
+		}
+
+		for (int i = j; i < height - j; i++) {
+			locateBlock(block, x + j, y, z + i);
+			locateBlock(block, x + width - 1 - j, y, z + i);
+		}
+	}
+}
+
 void drawCube(BlockID block, int x, int y, int z, int hor, int ver, int height)
 {
 	for (int i = 0; i < hor; i++)
@@ -94,7 +109,14 @@ void drawCircleLine(BlockID block, int x, int y, int z, int r)
 
 void drawSphere(BlockID block, int x, int y, int z, int r)
 {
-	//º¸·ù
+	for (int i = -r; i <= r; i++) {
+		for (int j = -r; j <= r; j++) {
+			for (int k = -r; k <= r; k++) {
+				if (i * i + j * j + k * k < (r + 0.5) * (r + 0.5))
+					locateBlock(block, x + i, y + j, z + k);
+			}
+		}
+	}
 }
 
 void drawLeg(BlockID block, int x, int y, int z, int theta)

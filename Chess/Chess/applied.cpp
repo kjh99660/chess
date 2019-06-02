@@ -28,22 +28,24 @@ void drawQueen(BlockID block, int x, int y, int z) {
 	drawCircle(block, x, y + 16, z, 5);
 	drawCircle(block, x, y + 17, z, 6);
 	drawCircleLine(block, x, y + 18, z, 5);
-	drawCircle(block, x, y + 18, z, 3);
-	drawCircle(block, x, y + 19, z, 3);
+	drawCircle(block, x, y + 19, z, 4);
+	drawCircle(block, x, y + 20, z, 3);
+	drawCircleLine(block, x, y + 21, z, 3);
+	drawCircle(block, x, y + 22, z, 3);
 	//Æ¼¾Æ¶ó
-	locateBlock(block, x + 3, y + 20, z);
-	locateBlock(block, x, y + 20, z + 3);
-	locateBlock(block, x, y + 20, z - 3);
-	locateBlock(block, x - 3, y + 20, z);
-	locateBlock(block, x + 2, y + 20, z + 2);
-	locateBlock(block, x + 2, y + 20, z - 2);
-	locateBlock(block, x + 2, y + 20, z + 2);
-	locateBlock(block, x - 2, y + 20, z + 2);
-	locateBlock(block, x - 2, y + 20, z - 2);
-	locateBlock(block, x + 2, y + 21, z - 2);
-	locateBlock(block, x + 2, y + 21, z + 2);
-	locateBlock(block, x - 2, y + 21, z + 2);
-	locateBlock(block, x - 2, y + 21, z - 2);
+	locateBlock(block, x + 3, y + 23, z);
+	locateBlock(block, x, y + 23, z + 3);
+	locateBlock(block, x, y + 23, z - 3);
+	locateBlock(block, x - 3, y + 23, z);
+	locateBlock(block, x + 2, y + 23, z + 2);
+	locateBlock(block, x + 2, y + 23, z - 2);
+	locateBlock(block, x + 2, y + 23, z + 2);
+	locateBlock(block, x - 2, y + 23, z + 2);
+	locateBlock(block, x - 2, y + 23, z - 2);
+	locateBlock(block, x + 2, y + 24, z - 2);
+	locateBlock(block, x + 2, y + 24, z + 2);
+	locateBlock(block, x - 2, y + 24, z + 2);
+	locateBlock(block, x - 2, y + 24, z - 2);
 
 
 }

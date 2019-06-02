@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="applied.h" />
     <ClInclude Include="fundamental.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="applied.cpp" />
     <ClCompile Include="fundamental.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

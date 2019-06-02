@@ -1,5 +1,4 @@
-# chess simulator project
----
+# Chess Simulator Project
 ## 기본 함수
 ### drawX
 x축과 평행한 직선을 그리는 함수

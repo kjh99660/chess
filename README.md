@@ -1,7 +1,7 @@
 #chess simulator project
 ---
-##함수 설명
-###drawX
+## 함수 설명
+### drawX
 ```C
 void drawX(BlockID block, int x, int y, int z, int len)
 {
@@ -10,7 +10,7 @@ void drawX(BlockID block, int x, int y, int z, int len)
 }
 ```
 x축과 평행한 직선을 그리는 함수
-###drawY
+### drawY
 ```C
 void drawY(BlockID block, int x, int y, int z, int len)
 {
@@ -19,7 +19,7 @@ void drawY(BlockID block, int x, int y, int z, int len)
 }
 ```
 y축과 평행한 직선을 그리는 함수
-###drawZ
+### drawZ
 ```C
 void drawZ(BlockID block, int x, int y, int z, int len)
 {
@@ -28,7 +28,7 @@ void drawZ(BlockID block, int x, int y, int z, int len)
 }
 ```
 z축과 평행한 직선을 그리는 함수
-###drawPlane
+### drawPlane
 ```C
 void drawPlane(BlockID block, int x, int y, int z, int width, int height)
 {
@@ -38,7 +38,7 @@ void drawPlane(BlockID block, int x, int y, int z, int width, int height)
 }
 ```
 시작점, 너비와 높이를 입력하면 평면을 만들어주는 함수
-###drawPlaneLine
+### drawPlaneLine
 ```C
 void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height)
 {
@@ -54,7 +54,7 @@ void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height)
 }
 ```
 시작점, 너비와 높이를 입력하면 속이 빈 평면을 만들어주는 함수
-###drawPlaneLine
+### drawPlaneLine
 ```C
 void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height, int thickness)
 {
@@ -72,7 +72,7 @@ void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height, in
 }
 ```
 블록,시작점,가로,세로와 두께를 입력하면 속이 비고 두께가 존재하는 도형을 만들어주는 함수
-###drawCube
+### drawCube
 ```C
 void drawCube(BlockID block, int x, int y, int z, int hor, int ver, int height)
 {
@@ -83,7 +83,7 @@ void drawCube(BlockID block, int x, int y, int z, int hor, int ver, int height)
 }
 ```
 시작점과 가로, 세로, 높이, 블록을 입력하면 직육면체를 생성해주는 함수
-###drawCircle
+### drawCircle
 ```C
 void drawCircle(BlockID block, int x, int y, int z, int r)
 {
@@ -94,7 +94,7 @@ void drawCircle(BlockID block, int x, int y, int z, int r)
 }
 ```
 블록, 원의 중심과 반지름을 입력하면 속이 찬 원을 생성하는 함수
-###drawCircleLine
+### drawCircleLine
 ```C
 void drawCircleLine(BlockID block, int x, int y, int z, int r)
 {
@@ -132,7 +132,7 @@ void drawCircleLine(BlockID block, int x, int y, int z, int r)
 }
 ```
 블록과 원의 중심과 반지름을 입력하면 속이 빈 원을 생성하는 함수
-###drawSphere
+### drawSphere
 ```C
 void drawSphere(BlockID block, int x, int y, int z, int r)
 {
@@ -147,9 +147,9 @@ void drawSphere(BlockID block, int x, int y, int z, int r)
 }
 ```
 블록,원의 중심과 반지름을 입력하면 구를 생성하는 함
-###drawLeg
+### drawLeg
 보류
-###chess_bottom
+### chess_bottom
 ```C
 void chess_bottom(BlockID block, int x, int y, int z) {
 	drawCircleLine(block, x, y, z, 6);
@@ -169,7 +169,7 @@ void chess_bottom(BlockID block, int x, int y, int z) {
 }
 ```
 퀸과 비숍의 하단에 해당되는 부분을 만드는 함수
-###Make_queen
+### Make_queen
 ```C
 void Make_queen(BlockID block,int x,int y,int z){
 	chess_bottom(block, x, y, z);
@@ -200,7 +200,7 @@ void Make_queen(BlockID block,int x,int y,int z){
 }
 ```
 블록과 말의 중심을 입력하면 퀸을 생성해주는 함수
-###Make_vishop
+### Make_vishop
 ```C
 void Make_vishop(BlockID block, int x, int y, int z) {
 	chess_bottom(block, x, y, z);

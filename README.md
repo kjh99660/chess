@@ -1,4 +1,12 @@
 # Chess Simulator Project
+## 월드 설명
+### concept & explain
+ 체스 시뮬레이터에서 체스하는 장면을 만들었습니다. \
+ 전반적인 기물의 크기를 크게 제작함으로써 느낌을 살렸습니다.\
+ 말과 다른 사물들 모두 각각 하나의 함수로 구성되어있습니다.
+ 
+ 
+ 
 ## 기본 함수
 ### drawX
 x축과 평행한 직선을 그리는 함수
@@ -237,3 +245,4 @@ void drawLook(BlockID block, int x, int y, int z)
 	drawCube(air, x - 1, y + 21, z - 5, 3, 1, 2);
 }
 ```
+## 유튜브 

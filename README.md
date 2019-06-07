@@ -342,6 +342,7 @@ void drawChessBoard(BlockID block, int x, int y, int z)
 ```
 ### drawKnight
 시작점을 입력하면 나이트를 생성하는 함수
+```C
 void drawKnight(BlockID block, int x, int y, int z)
 {
 	for (int dy = 0; dy < 2; dy++)
@@ -367,4 +368,5 @@ void drawKnight(BlockID block, int x, int y, int z)
 	drawCube(black, x - 1, y + 17, z + 4, 2, 1, 2);
 
 }
+```
 ## 유튜브

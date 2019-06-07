@@ -1,7 +1,15 @@
-#chess simulator project
----
-##함수 설명
-###drawX
+# Chess Simulator Project
+## 월드 설명
+### concept & explain
+ 체스 시뮬레이터에서 체스하는 장면을 만들었습니다. \
+ 전반적인 기물의 크기를 크게 제작함으로써 느낌을 살렸습니다.\
+ 말과 다른 사물들 모두 각각 하나의 함수로 구성되어있습니다.
+ 
+ 
+ 
+## 기본 함수
+### drawX
+x축과 평행한 직선을 그리는 함수
 ```C
 void drawX(BlockID block, int x, int y, int z, int len)
 {
@@ -9,8 +17,8 @@ void drawX(BlockID block, int x, int y, int z, int len)
 		locateBlock(block, x + i, y, z);
 }
 ```
-x축과 평행한 직선을 그리는 함수
-###drawY
+### drawY
+y축과 평행한 직선을 그리는 함수
 ```C
 void drawY(BlockID block, int x, int y, int z, int len)
 {
@@ -18,8 +26,8 @@ void drawY(BlockID block, int x, int y, int z, int len)
 		locateBlock(block, x, y + i, z);
 }
 ```
-y축과 평행한 직선을 그리는 함수
-###drawZ
+### drawZ
+z축과 평행한 직선을 그리는 함수
 ```C
 void drawZ(BlockID block, int x, int y, int z, int len)
 {
@@ -27,8 +35,8 @@ void drawZ(BlockID block, int x, int y, int z, int len)
 		locateBlock(block, x, y, z + i);
 }
 ```
-z축과 평행한 직선을 그리는 함수
-###drawPlane
+### drawPlane
+시작점, 가로와 세로의 길이를 입력하면 평면을 그리는 함수
 ```C
 void drawPlane(BlockID block, int x, int y, int z, int width, int height)
 {
@@ -37,8 +45,8 @@ void drawPlane(BlockID block, int x, int y, int z, int width, int height)
 			locateBlock(block, x + i, y, z + j);
 }
 ```
-시작점, 너비와 높이를 입력하면 평면을 만들어주는 함수
-###drawPlaneLine
+### drawPlaneLine
+시작점, 가로와 세로의 길이를 입력하면 속이 빈 평면을 그리는 함수
 ```C
 void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height)
 {
@@ -53,8 +61,8 @@ void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height)
 	}
 }
 ```
-시작점, 너비와 높이를 입력하면 속이 빈 평면을 만들어주는 함수
-###drawPlaneLine
+### drawPlaneLine
+시작점, 가로와 세로의 길이, 두께를 입력하면 속이 비고 두께가 존재하는 도형을 그리는 함수
 ```C
 void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height, int thickness)
 {
@@ -71,8 +79,8 @@ void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height, in
 	}
 }
 ```
-블록,시작점,가로,세로와 두께를 입력하면 속이 비고 두께가 존재하는 도형을 만들어주는 함수
-###drawCube
+### drawCube
+시작점과 가로, 세로, 높이를 입력하면 직육면체를 그리는 함수
 ```C
 void drawCube(BlockID block, int x, int y, int z, int hor, int ver, int height)
 {
@@ -82,8 +90,8 @@ void drawCube(BlockID block, int x, int y, int z, int hor, int ver, int height)
 				locateBlock(block, x + i, y + j, z + k);
 }
 ```
-시작점과 가로, 세로, 높이, 블록을 입력하면 직육면체를 생성해주는 함수
-###drawCircle
+### drawCircle
+원의 중심점과 반지름을 입력하면 속이 찬 원을 그리는 함수
 ```C
 void drawCircle(BlockID block, int x, int y, int z, int r)
 {
@@ -93,8 +101,8 @@ void drawCircle(BlockID block, int x, int y, int z, int r)
 				locateBlock(block, x + i, y, z + j);
 }
 ```
-블록, 원의 중심과 반지름을 입력하면 속이 찬 원을 생성하는 함수
-###drawCircleLine
+### drawCircleLine
+원의 중심점 반지름을 입력하면 속이 빈 원을 그리는 함수
 ```C
 void drawCircleLine(BlockID block, int x, int y, int z, int r)
 {
@@ -131,8 +139,8 @@ void drawCircleLine(BlockID block, int x, int y, int z, int r)
 	}
 }
 ```
-블록과 원의 중심과 반지름을 입력하면 속이 빈 원을 생성하는 함수
-###drawSphere
+### drawSphere
+원의 중심점과 반지름을 입력하면 구를 그리는 함수
 ```C
 void drawSphere(BlockID block, int x, int y, int z, int r)
 {
@@ -146,10 +154,10 @@ void drawSphere(BlockID block, int x, int y, int z, int r)
 	}
 }
 ```
-블록,원의 중심과 반지름을 입력하면 구를 생성하는 함
-###drawLeg
+### drawLeg
 보류
-###chess_bottom
+### chess_bottom
+퀸과 비숍의 하단에 해당되는 부분을 생성하는 함수
 ```C
 void chess_bottom(BlockID block, int x, int y, int z) {
 	drawCircleLine(block, x, y, z, 6);
@@ -165,13 +173,13 @@ void chess_bottom(BlockID block, int x, int y, int z) {
 	drawCircleLine(block, x, y + 10, z, 3);
 	drawCircleLine(block, x, y + 11, z, 3);
 	drawCircleLine(block, x, y + 12, z, 3);
-
 }
 ```
-퀸과 비숍의 하단에 해당되는 부분을 만드는 함수
-###Make_queen
+## 응용 함수
+### drawQueen
+말의 중심점을 입력하면 퀸을 생성하는 함수
 ```C
-void Make_queen(BlockID block,int x,int y,int z){
+void drawQueen(BlockID block, int x, int y, int z) {
 	chess_bottom(block, x, y, z);
 	drawCircleLine(block, x, y + 13, z, 3);
 	drawCircle(block, x, y + 14, z, 4);
@@ -179,28 +187,28 @@ void Make_queen(BlockID block,int x,int y,int z){
 	drawCircle(block, x, y + 16, z, 5);
 	drawCircle(block, x, y + 17, z, 6);
 	drawCircleLine(block, x, y + 18, z, 5);
-	drawCircle(block, x, y + 18, z, 3);
-	drawCircle(block, x, y + 19, z, 3);
+	drawCircle(block, x, y + 19, z, 4);
+	drawCircle(block, x, y + 20, z, 3);
+	drawCircleLine(block, x, y + 21, z, 3);
+	drawCircle(block, x, y + 22, z, 3);
 	//티아라
-	locateBlock(block, x+3, y + 20, z);
-	locateBlock(block, x , y + 20, z+3);
-	locateBlock(block, x , y + 20, z-3);
-	locateBlock(block, x-3, y + 20, z);
-	locateBlock(block, x+2, y + 20, z+2);
-	locateBlock(block, x + 2, y + 20, z-2);
-	locateBlock(block, x + 2, y + 20, z+2);
-	locateBlock(block, x - 2, y + 20, z+2);
-	locateBlock(block, x - 2, y + 20, z-2);
-	locateBlock(block, x + 2, y + 21, z - 2);
-	locateBlock(block, x + 2, y + 21, z + 2);
-	locateBlock(block, x - 2, y + 21, z + 2);
-	locateBlock(block, x - 2, y + 21, z - 2);
-
-
+	locateBlock(block, x + 3, y + 23, z);
+	locateBlock(block, x, y + 23, z + 3);
+	locateBlock(block, x, y + 23, z - 3);
+	locateBlock(block, x - 3, y + 23, z);
+	locateBlock(block, x + 2, y + 23, z + 2);
+	locateBlock(block, x + 2, y + 23, z - 2);
+	locateBlock(block, x + 2, y + 23, z + 2);
+	locateBlock(block, x - 2, y + 23, z + 2);
+	locateBlock(block, x - 2, y + 23, z - 2);
+	locateBlock(block, x + 2, y + 24, z - 2);
+	locateBlock(block, x + 2, y + 24, z + 2);
+	locateBlock(block, x - 2, y + 24, z + 2);
+	locateBlock(block, x - 2, y + 24, z - 2);
 }
 ```
-블록과 말의 중심을 입력하면 퀸을 생성해주는 함수
-###Make_vishop
+### drawBishop
+말의 중심점을 입력하면 비숍을 생성하는 함수
 ```C
 void Make_vishop(BlockID block, int x, int y, int z) {
 	chess_bottom(block, x, y, z);
@@ -212,7 +220,153 @@ void Make_vishop(BlockID block, int x, int y, int z) {
 	drawCircle(block, x, y + 18, z, 2);
 	drawCircle(block, x, y + 19, z, 1);
 	locateBlock(block, x,y + 20, z );
+}
+```
+### drawLook
+말의 중심점을 입력하면 룩을 생성하는 함수
+```C
+void drawLook(BlockID block, int x, int y, int z)
+{
+	for (int dy = 0; dy < 2; dy++)
+		drawCircle(block, x, y + dy, z, 6);
+	drawCircle(block, x, y + 2, z, 5);
+	for (int dy = 3; dy < 10; dy++)
+		drawCircle(block, x, y + dy, z, 4);
+	for (int dy = 10; dy < 18; dy++)
+		drawCircle(block, x, y + dy, z, 3);
+	drawCircle(block, x, y + 18, z, 4);
+	for (int dy = 19; dy < 23; dy++)
+	drawCircleLine(block, x, y + dy, z, 5);
+
+	BlockID air = createBlock(BLOCK_AIR);
+	drawCube(air, x - 5, y + 21, z - 1, 1, 3, 2);
+	drawCube(air, x + 5, y + 21, z - 1, 1, 3, 2);
+	drawCube(air, x - 1, y + 21, z + 5, 3, 1, 2);
+	drawCube(air, x - 1, y + 21, z - 5, 3, 1, 2);
+}
+```
+### drawKing
+말의 중심점을 입력하면 킹을 생성하는 함수
+```C
+void drawKing(BlockID block, int midx, int y, int midz)
+{
+	int h = 0, r = 5;
+	drawCircle(block, midx, y + h, midz, r);
+	h++;
+	for (int i = 0; i < 3; i++, h++, r--)
+		drawCircle(block, midx, y + h, midz, r);
+	for (int i = 0, t = r; i < 4; i++, h++) {
+		r = t - i / 2;
+		drawCircle(block, midx, y + h, midz, r);
+	}
+
+	r--;
+	for (int i = 0; i < 3; i++, h++)
+		drawCircle(block, midx, y + h, midz, r);
+
+	r = 3;
+	for (int i = 0; i < 3; i++, h++, r--)
+		drawCircle(block, midx, y + h, midz, r);
+	for (int i = 0; i < 3; i++, h++, r++) {
+		drawCircle(block, midx, y + h, midz, r);
+	}
+	for (int i = 0; i < 3; i++, h++, r--)
+		drawCircle(block, midx, y + h, midz, r);
+
+	locateBlock(block, midx, y + h, midz);
+	h++;
+	for (int i = -1; i < 2; i++)
+		locateBlock(block, midx + i, y + h, midz);
+	h++;
+	locateBlock(block, midx, y + h, midz);
+}
+```
+### drawPawn
+말의 중심점을 입력하면 폰을 생성하는 함수
+```C
+void drawPawn(BlockID block, int midx, int y, int midz)
+{
+	int h = 0, r = 4;
+	drawCircle(block, midx, y + h, midz, r);
+	h++;
+	for (int i = 0; i < 3; i++, h++, r--)
+		drawCircle(block, midx, y + h, midz, r);
+	for (int i = 0, t = r; i < 4; i++, h++) {
+		r = t - i / 2;
+		drawCircle(block, midx, y + h, midz, r);
+	}
+
+	r = 2;
+	drawCircle(block, midx, y + h, midz, r);
+
+	r = 3;
+	h = h + 3;
+	drawSphere(block, midx, y + h, midz, r);
+}
+```
+### drawChessBoard
+시작점을 입력하면 체스보드를 생성하는 함수
+```C
+void drawChessBoard(BlockID block, int x, int y, int z)
+{
+	drawCube(block, x, y, z, 10, 10, 3);
+	drawCube(block, x + 94, y, z, 10, 10, 3);
+	drawCube(block, x, y, z + 114, 10, 10, 3);
+	drawCube(block, x + 114, y, z + 114, 10, 10, 3);
+	drawCube(block, x, y + 3, z, 124, 124, 11);
+	drawPlaneLine(block, x, y + 14, z, 124, 124, 10);
+
+
+	WoolID white = createWool(COLOR_WHITE);
+	WoolID black = createWool(COLOR_BLACK);
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			drawPlane(white, x + 2 + 26 * i, y + 14, z + 2 + 26 * j, 13, 13);
+			drawPlane(black, x + 15 + 26 * i, y + 14, z + 2 + 26 * j, 13, 13);
+		}
+	}
+
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			drawPlane(black, x + 2 + 26 * i, y + 14, z + 15 + 26 * j, 13, 13);
+			drawPlane(white, x + 15 + 26 * i, y + 14, z + 15 + 26 * j, 13, 13);
+		}
+	}
+
 
 }
 ```
-블록과 말의 중심을 입력하면 비숍을 생성해주는 함수
+### drawKnight
+시작점을 입력하면 나이트를 생성하는 함수
+```C
+void drawKnight(BlockID block, int x, int y, int z)
+{
+	for (int dy = 0; dy < 2; dy++)
+		drawCircle(block, x, y + dy, z, 6);
+	drawCircle(block, x, y + 2, z, 5);
+	drawCube(block, x - 3, y + 3, z - 3, 8, 7, 3);
+	drawCube(block, x - 1, y + 6, z - 3, 6, 7, 3);
+	drawCube(block, x + 1, y + 9, z - 3, 4, 7, 2);
+	drawCube(block, x - 3, y + 11, z - 3, 8, 7, 6);
+	drawCube(block, x - 6, y + 12, z - 2, 3, 5, 1);
+	drawCube(block, x - 6, y + 14, z - 2, 3, 5, 2);
+	drawCube(block, x - 1, y + 17, z - 3, 2, 1, 4);
+	drawCube(block, x - 1, y + 17, z + 3, 2, 1, 4);
+
+	for (int i = 0; i < 3; i++)
+	{
+		drawCube(block, x - 2 + 3 * i, y + 17, z - 1, 1, 3, 2);
+		drawCube(block, x - 3 + 3 * i, y + 19, z - 3, 1, 3, 1);
+	}
+
+	WoolID black = createWool(COLOR_BLACK);
+	drawCube(black, x - 1, y + 17, z - 4, 2, 1, 2);
+	drawCube(black, x - 1, y + 17, z + 4, 2, 1, 2);
+
+}
+```
+## 유튜브

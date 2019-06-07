@@ -246,6 +246,7 @@ void drawLook(BlockID block, int x, int y, int z)
 }
 ```
 ### drawKing
+말의 중심점을 입력하면 킹을 생성하는 함수
 ```C
 void drawKing(BlockID block, int midx, int y, int midz)
 {
@@ -281,6 +282,7 @@ void drawKing(BlockID block, int midx, int y, int midz)
 }
 ```
 ### drawPawn
+말의 중심점을 입력하면 폰을 생성하는 함수
 ```C
 void drawPawn(BlockID block, int midx, int y, int midz)
 {
@@ -302,4 +304,67 @@ void drawPawn(BlockID block, int midx, int y, int midz)
 	drawSphere(block, midx, y + h, midz, r);
 }
 ```
+### drawChessBoard
+시작점을 입력하면 체스보드를 생성하는 함수
+```C
+void drawChessBoard(BlockID block, int x, int y, int z)
+{
+	drawCube(block, x, y, z, 10, 10, 3);
+	drawCube(block, x + 94, y, z, 10, 10, 3);
+	drawCube(block, x, y, z + 114, 10, 10, 3);
+	drawCube(block, x + 114, y, z + 114, 10, 10, 3);
+	drawCube(block, x, y + 3, z, 124, 124, 11);
+	drawPlaneLine(block, x, y + 14, z, 124, 124, 10);
+
+
+	WoolID white = createWool(COLOR_WHITE);
+	WoolID black = createWool(COLOR_BLACK);
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			drawPlane(white, x + 2 + 26 * i, y + 14, z + 2 + 26 * j, 13, 13);
+			drawPlane(black, x + 15 + 26 * i, y + 14, z + 2 + 26 * j, 13, 13);
+		}
+	}
+
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			drawPlane(black, x + 2 + 26 * i, y + 14, z + 15 + 26 * j, 13, 13);
+			drawPlane(white, x + 15 + 26 * i, y + 14, z + 15 + 26 * j, 13, 13);
+		}
+	}
+
+
+}
+```
+### drawKnight
+시작점을 입력하면 나이트를 생성하는 함수
+void drawKnight(BlockID block, int x, int y, int z)
+{
+	for (int dy = 0; dy < 2; dy++)
+		drawCircle(block, x, y + dy, z, 6);
+	drawCircle(block, x, y + 2, z, 5);
+	drawCube(block, x - 3, y + 3, z - 3, 8, 7, 3);
+	drawCube(block, x - 1, y + 6, z - 3, 6, 7, 3);
+	drawCube(block, x + 1, y + 9, z - 3, 4, 7, 2);
+	drawCube(block, x - 3, y + 11, z - 3, 8, 7, 6);
+	drawCube(block, x - 6, y + 12, z - 2, 3, 5, 1);
+	drawCube(block, x - 6, y + 14, z - 2, 3, 5, 2);
+	drawCube(block, x - 1, y + 17, z - 3, 2, 1, 4);
+	drawCube(block, x - 1, y + 17, z + 3, 2, 1, 4);
+
+	for (int i = 0; i < 3; i++)
+	{
+		drawCube(block, x - 2 + 3 * i, y + 17, z - 1, 1, 3, 2);
+		drawCube(block, x - 3 + 3 * i, y + 19, z - 3, 1, 3, 1);
+	}
+
+	WoolID black = createWool(COLOR_BLACK);
+	drawCube(black, x - 1, y + 17, z - 4, 2, 1, 2);
+	drawCube(black, x - 1, y + 17, z + 4, 2, 1, 2);
+
+}
 ## 유튜브

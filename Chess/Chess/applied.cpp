@@ -81,6 +81,7 @@ void drawLook(BlockID block, int x, int y, int z)
 	drawCube(air, x - 1, y + 21, z + 5, 3, 1, 2);
 	drawCube(air, x - 1, y + 21, z - 5, 3, 1, 2);
 }
+
 void drawKing(BlockID block, int midx, int y, int midz)
 {
 	int h = 0, r = 5;
@@ -113,6 +114,7 @@ void drawKing(BlockID block, int midx, int y, int midz)
 	h++;
 	locateBlock(block, midx, y + h, midz);
 }
+
 void drawPawn(BlockID block, int midx, int y, int midz)
 {
 	int h = 0, r = 4;
@@ -132,6 +134,7 @@ void drawPawn(BlockID block, int midx, int y, int midz)
 	h = h + 3;
 	drawSphere(block, midx, y + h, midz, r);
 }
+
 void drawChessBoard(BlockID block, int x, int y, int z)
 {
 	drawCube(block, x, y, z, 10, 10, 3);
@@ -164,6 +167,7 @@ void drawChessBoard(BlockID block, int x, int y, int z)
 
 
 }
+
 void drawKnight(BlockID block, int x, int y, int z)
 {
 	for (int dy = 0; dy < 2; dy++)

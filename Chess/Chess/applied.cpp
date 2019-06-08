@@ -32,7 +32,7 @@ void drawQueen(BlockID block, int x, int y, int z) {
 	drawCircle(block, x, y + 20, z, 3);
 	drawCircleLine(block, x, y + 21, z, 3);
 	drawCircle(block, x, y + 22, z, 3);
-	//Ƽ�ƶ�
+	//Æ¼¾Æ¶ó
 	locateBlock(block, x + 3, y + 23, z);
 	locateBlock(block, x, y + 23, z + 3);
 	locateBlock(block, x, y + 23, z - 3);
@@ -149,7 +149,7 @@ void drawChessBoard(BlockID block, int x, int y, int z)
 
 	WoolID white = createWool(COLOR_WHITE);
 	WoolID black = createWool(COLOR_BLACK);
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 4; j++)
 		{
@@ -158,7 +158,7 @@ void drawChessBoard(BlockID block, int x, int y, int z)
 		}
 	}
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 4; j++)
 		{
@@ -191,7 +191,13 @@ void drawKnight(BlockID block, int x, int y, int z)
 	}
 
 	WoolID black = createWool(COLOR_BLACK);
-	drawCube(black, x - 1, y + 17, z - 4, 2, 1, 2);
-	drawCube(black, x - 1, y + 17, z + 4, 2, 1, 2);
-
+	WoolID white = createWool(COLOR_WHITE);
+	if (x < 10) {
+		drawCube(black, x - 1, y + 17, z - 4, 2, 1, 2);
+		drawCube(black, x - 1, y + 17, z + 4, 2, 1, 2);
+	}
+	else {
+		drawCube(white, x - 1, y + 17, z - 4, 2, 1, 2);
+		drawCube(white, x - 1, y + 17, z + 4, 2, 1, 2);
+	}
 }

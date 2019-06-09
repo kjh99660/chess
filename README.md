@@ -319,7 +319,7 @@ void drawChessBoard(BlockID block, int x, int y, int z)
 
 	WoolID white = createWool(COLOR_WHITE);
 	WoolID black = createWool(COLOR_BLACK);
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 4; j++)
 		{
@@ -328,7 +328,7 @@ void drawChessBoard(BlockID block, int x, int y, int z)
 		}
 	}
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 4; j++)
 		{

@@ -46,7 +46,7 @@ void drawPlaneLine(BlockID block, int x, int y, int z, int width, int height, in
 	for (int j = 0; j < thickness; j++) {
 		for (int i = j; i < width - j; i++) {
 			locateBlock(block, x + i, y, z + j);
-			locateBlock(block, x + i, y, z + height - 1 + j);
+			locateBlock(block, x + i, y, z + height - 1 - j);
 		}
 
 		for (int i = j; i < height - j; i++) {
@@ -117,9 +117,4 @@ void drawSphere(BlockID block, int x, int y, int z, int r)
 			}
 		}
 	}
-}
-
-void drawLeg(BlockID block, int x, int y, int z, int theta)
-{
-	//º¸·ù
 }

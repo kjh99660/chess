@@ -32,7 +32,7 @@ void drawQueen(BlockID block, int x, int y, int z) {
 	drawCircle(block, x, y + 20, z, 3);
 	drawCircleLine(block, x, y + 21, z, 3);
 	drawCircle(block, x, y + 22, z, 3);
-	//Æ¼¾Æ¶ó
+	//Ƽ�ƶ�
 	locateBlock(block, x + 3, y + 23, z);
 	locateBlock(block, x, y + 23, z + 3);
 	locateBlock(block, x, y + 23, z - 3);
@@ -140,7 +140,7 @@ void drawPawn(BlockID block, int x, int y, int z)
 void drawChessBoard(BlockID block, int x, int y, int z)
 {
 	drawCube(block, x, y, z, 10, 10, 3);
-	drawCube(block, x + 94, y, z, 10, 10, 3);
+	drawCube(block, x + 114, y, z, 10, 10, 3);
 	drawCube(block, x, y, z + 114, 10, 10, 3);
 	drawCube(block, x + 114, y, z + 114, 10, 10, 3);
 	drawCube(block, x, y + 3, z, 124, 124, 11);
@@ -153,8 +153,8 @@ void drawChessBoard(BlockID block, int x, int y, int z)
 	{
 		for (int j = 0; j < 4; j++)
 		{
-			drawPlane(white, x + 2 + 26 * i, y + 14, z + 2 + 26 * j, 13, 13);
-			drawPlane(black, x + 15 + 26 * i, y + 14, z + 2 + 26 * j, 13, 13);
+			drawPlane(white, x + 10 + 26 * i, y + 14, z + 10 + 26 * j, 13, 13);
+			drawPlane(black, x + 23 + 26 * i, y + 14, z + 10 + 26 * j, 13, 13);
 		}
 	}
 
@@ -162,12 +162,10 @@ void drawChessBoard(BlockID block, int x, int y, int z)
 	{
 		for (int j = 0; j < 4; j++)
 		{
-			drawPlane(black, x + 2 + 26 * i, y + 14, z + 15 + 26 * j, 13, 13);
-			drawPlane(white, x + 15 + 26 * i, y + 14, z + 15 + 26 * j, 13, 13);
+			drawPlane(black, x + 10 + 26 * i, y + 14, z + 23 + 26 * j, 13, 13);
+			drawPlane(white, x + 23 + 26 * i, y + 14, z + 23 + 26 * j, 13, 13);
 		}
 	}
-
-
 }
 
 void drawKnight(BlockID block, int x, int y, int z)
@@ -190,9 +188,9 @@ void drawKnight(BlockID block, int x, int y, int z)
 		drawCube(block, x - 3 + 3 * i, y + 19, z - 3, 1, 3, 1);
 	}
 
-	WoolID black = createWool(COLOR_BLACK);
-	WoolID white = createWool(COLOR_WHITE);
-	if (x < 10) {
+	BlockID white = createPlanks(PLANKS_BIRCH);
+	BlockID black = createPlanks(PLANKS_DARK_OAK);
+	if (x < 62) {
 		drawCube(black, x - 1, y + 17, z - 4, 2, 1, 2);
 		drawCube(black, x - 1, y + 17, z + 4, 2, 1, 2);
 	}
@@ -200,4 +198,5 @@ void drawKnight(BlockID block, int x, int y, int z)
 		drawCube(white, x - 1, y + 17, z - 4, 2, 1, 2);
 		drawCube(white, x - 1, y + 17, z + 4, 2, 1, 2);
 	}
+
 }

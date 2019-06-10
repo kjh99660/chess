@@ -371,4 +371,4 @@ void drawKnight(BlockID block, int x, int y, int z)
 ```
 ## 유튜브
 
-https://github.com/kjh99660/chess
+https://youtu.be/9YpQxPXpX8E
